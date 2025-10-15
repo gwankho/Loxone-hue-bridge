@@ -63,6 +63,25 @@ The sets react exactly the same
       [Philips Hue Bridge → Zigbee → Lights]# Loxone-hue-bridge
 Full Control over Hue lights with Loxone
 ```
+```mermaid
+flowchart LR
+    A[Loxone Miniserver\n(Virtual Outputs / Lighting Controller)] --> B[Node-RED\nLoxone → Hue Bridge Logic]
+    B --> C[Philips Hue Bridge\n(Zigbee Network)]
+    
+    subgraph B [Node-RED Instance]
+      B1[node-red-contrib-loxone]
+      B2[Function Node\nRGB / Temp / HSV Mapping]
+      B3[node-red-contrib-huemagic]
+      B1 --> B2 --> B3
+    end
+
+    subgraph D [Supporting Platform]
+      D1[Docker / Raspberry Pi / Synology]
+      D2[Local Network Connection]
+      D1 --> D2
+    end
+    D2 --> B
+```
 
 ## How it Works
 
