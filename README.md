@@ -125,7 +125,7 @@ Now add a Hue light
 
 <img width="2126" height="946" alt="CleanShot 2025-10-15 at 16 50 46@2x" src="https://github.com/user-attachments/assets/46187259-3398-4913-958f-1be7594db6ed" />
 
-Name it any usefull name
+Name it any useful name
 
 Select your bridge
 
@@ -148,7 +148,7 @@ Then set the Control In up.
 
 2 Select the category of Lighting Controller (default is Lighting, duh)
 
-3 Select the Control, this is the Virtual Output Command thats defined on the Lighting Controller on the output!! Check Loxone to be sure Typecally it says (VQ) behind the name), do not select any other Loxone object as that just does noet work.
+3 Select the Control, this is the Virtual Output Command thats defined on the Lighting Controller on the output!! Check Loxone to be sure Typecally it says (VQ) behind the name), do not select any other Loxone object as that just does not work.
 <img width="539" height="362" alt="Screenshot 2025-10-15 at 17 05 46" src="https://github.com/user-attachments/assets/9d5c1768-b3e4-42e8-8512-a73c543dfa2e" />
 
 4 If the previous selection was correct you can select color here
