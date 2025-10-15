@@ -10,7 +10,11 @@ with a small **JavaScript mapping function** that normalizes events and payloads
 
 Everything runs **locally** – no external cloud or remote services required.
 It works with a standard Lighting Controller in Loxone and suports temp based colors, RGB colors and sequences.
-<img width="640" height="744" alt="CleanShot 2025-10-15 at 21 57 02@2x" src="https://github.com/user-attachments/assets/d966b745-9981-4c44-89cb-dbb305aef612" /><img width="600" height="472" alt="CleanShot 2025-10-15 at 21 56 43@2x" src="https://github.com/user-attachments/assets/e6195b2b-1eb2-4fa8-8bb0-60b849ed23d8" /><img width="592" height="458" alt="CleanShot 2025-10-15 at 21 56 30@2x" src="https://github.com/user-attachments/assets/0bbd137b-782b-4ffc-b6a7-d09b06c82dd4" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d966b745-9981-4c44-89cb-dbb305aef612" width="30%" />
+  <img src="https://github.com/user-attachments/assets/e6195b2b-1eb2-4fa8-8bb0-60b849ed23d8" width="30%" />
+  <img src="https://github.com/user-attachments/assets/0bbd137b-782b-4ffc-b6a7-d09b06c82dd4" width="30%" />
+</p>
 
 I tried everything to get it running without a service like Node-RED but did not get that working, the Pico-C code made my Loxone unstable (which is an achievement as such).So unfortunately with an extra component I got everything working pretty stable
 
