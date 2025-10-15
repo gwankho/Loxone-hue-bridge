@@ -167,6 +167,12 @@ This code translates the Loxone RGB values to Hue values. Then Deploy and it sho
 
 To make it easy you can import the noderedflow.json in Node-RED that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
 
+---
+## The result
+
+
+https://github.com/user-attachments/assets/dbe60fb4-5000-42b4-bc2e-0631a57e1fa7
+
 
 ---
 
