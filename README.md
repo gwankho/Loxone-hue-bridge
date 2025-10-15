@@ -14,11 +14,11 @@ I tried everything to get it running without a service like Node-RED but did not
 
 Everything works, HSV (white temp), RGB and even sequences (party mode).
 
-So apart from your Loxone and Hue devices you need Noder-RED opensource on something that runs already in your home (like my Synology) or if you really do not have anything buy a Raspberry Pi (I made it pretty by buying a EUR 15 DIN Housing and a EUR 8 LCD)
+So apart from your Loxone and Hue devices you need Node-RED open source on something that runs already in your home (like my Synology) or if you really do not have anything buy a Raspberry Pi (I made it pretty by buying a EUR 15 DIN Housing and a EUR 8 LCD)
 <img width="325" height="375" alt="Screenshot 2025-10-15 at 16 06 48" src="https://github.com/user-attachments/assets/4ee18a90-6fdb-497b-a5c8-4e13dc2d94f2" />
 
 
-So without further adue
+So without further ado
 ---
 ## Hardware
 **Set 1**
@@ -42,11 +42,11 @@ Hue bridge v2
 
 Loxone miniserver (100335)
 
-Synology DS918+ Docker(Container Manger)
+Synology DS918+ Docker(Container Manager)
 
 Hue bridge v2
 
-The sets react exctly the same
+The sets react exactly the same
 
 ## Architecture
 
@@ -87,7 +87,7 @@ Connect that Virtual output command to the controller
 <img width="1011" height="319" alt="Screenshot 2025-10-15 at 16 20 35" src="https://github.com/user-attachments/assets/6b07866f-02b1-4614-97c6-fb4ee4df3b48" />
 
 Submit to the Miniserver (save)
-Then set the Light cicuit (here LC1) to RGB
+Then set the Light circuit (here LC1) to RGB
 <img width="925" height="590" alt="Screenshot 2025-10-15 at 16 21 27" src="https://github.com/user-attachments/assets/f6ced43d-c1d3-4dac-9046-a3b55d9d55f8" />
 
 And make a nice mood just to test
@@ -95,17 +95,17 @@ And make a nice mood just to test
 
 That's it for Loxone
 
-A switch like a T5 is usefull but not really needed if you use the Loxone app
+A switch like a T5 is useful but not really needed if you use the Loxone app
 
-**Node-RED
+**Node-RED**
 
 Get something that supports Node-RED, any PC, Mac, Linux, Docker, Azure, Amazon or Raspberry will work. I started by just installing it on my Mac to see if it worked.
 
 Use the official Node-RED website http://nodered.org, they got a great "Getting Started" section.
 
-After installion on any platform, you just type in the IP or hostname on port 1880. Eg. http://127.0.0.1:1880 if it runs on your computer.
+After installation on any platform, you just type in the IP or hostname on port 1880. Eg. http://127.0.0.1:1880 if it runs on your computer.
 
-Go to manage pallete and install node-red-contrib-huemagic-fork and node-red-contrib-loxone (go to the tab install and type those names, no need for a separate download)
+Go to manage palette and install node-red-contrib-huemagic-fork and node-red-contrib-loxone (go to the tab install and type those names, no need for a separate download)
 <img width="2138" height="1724" alt="CleanShot 2025-10-15 at 16 35 09@2x" src="https://github.com/user-attachments/assets/0c6acb8d-1745-4abb-9049-1ee1b3b96ad6" />
 
 If you see the palette screen like this you are good!
