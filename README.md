@@ -50,19 +50,7 @@ The sets react exactly the same
 
 ## Architecture
 
-```text
-[Loxone Miniserver]
-      │  (UDP / HTTP / WebSocket)
-      ▼
-[Node-RED (Docker / Raspberry Pi)]
-      ├── node-red-contrib-loxone
-      ├── Function node (custom JS mapping)
-      └── node-red-contrib-huemagic
-            │
-            ▼
-      [Philips Hue Bridge → Zigbee → Lights]# Loxone-hue-bridge
-Full Control over Hue lights with Loxone
-```
+
 ```mermaid
 flowchart LR
     A[Loxone Miniserver\n(Virtual Outputs / Lighting Controller)] --> B[Node-RED\nLoxone → Hue Bridge Logic]
