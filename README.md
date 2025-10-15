@@ -9,6 +9,7 @@ This project bridges the two systems using **Node-RED** running on anything like
 with a small **JavaScript mapping function** that normalizes events and payloads between Loxone and Hue.
 
 Everything runs **locally** – no external cloud or remote services required.
+
 It works with a standard Lighting Controller in Loxone and suports temp based colors, RGB colors and sequences.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d966b745-9981-4c44-89cb-dbb305aef612" width="30%" />
