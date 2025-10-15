@@ -15,21 +15,27 @@ I tried everything to get it running without a service like Node-RED but did not
 So without further adue
 ---
 ## Hardware
-####Set 1
-####Loxone miniserver (100335)
-####Raspberry Pi 3 4GB
-####Hue bridge v2
+**Set 1**
 
-Set 2
 Loxone miniserver (100335)
+
+Raspberry Pi 3 4GB
+
+Hue bridge v2
+
+**Set 2**
+
+Loxone miniserver (100335)
+
 Synology DS918+ Docker(Container Manger)
+
 Hue bridge v2
 
 The sets react exctly the same
 
 ## Architecture
 
-
+```text
 [Loxone Miniserver]
       │  (UDP / HTTP / WebSocket)
       ▼
