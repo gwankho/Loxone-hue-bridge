@@ -5,7 +5,7 @@
 
 ## 🔧 About this Project
 Controlling **Philips Hue** lights directly from **Loxone** has always been tricky.  
-This project bridges the two systems using **Node-RED** running on a **Raspberry Pi** or in **Docker** (got them both running),  
+This project bridges the two systems using **Node-RED** running on anything like a simple **Windows PC**, **Raspberry Pi** or in **Docker**,  
 with a small **JavaScript mapping function** that normalizes events and payloads between Loxone and Hue.
 
 Everything runs **locally** – no external cloud or remote services required.
