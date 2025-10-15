@@ -171,6 +171,7 @@ To make it easy you can import the noderedflow.json in Node-RED that sets this u
 ## The result
 
 Here the Loxone Configurator and the Node-RED interface next to each other. 
+
 https://github.com/user-attachments/assets/dbe60fb4-5000-42b4-bc2e-0631a57e1fa7
 
 
