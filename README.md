@@ -165,7 +165,7 @@ Then copy the code from the file functionrgb.js in the block
 
 Ths code translates the Loxone RGB values to Hue values. Then Deploy and it should work.
 
-To make it easy you can import the loxonehue.json in nodered that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
+To make it easy you can import the noderedflow.json in nodered that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
 
 
 ---
