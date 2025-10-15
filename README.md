@@ -25,12 +25,20 @@ So without further adue
 
 Loxone miniserver (100335)
 
+MacBook
+
+Hue bridge v2
+
+**Set 2**
+
+Loxone miniserver (100335)
+
 Raspberry Pi 3 4GB
 
 Hue bridge v2
 
 
-**Set 2**
+**Set 3**
 
 Loxone miniserver (100335)
 
@@ -159,3 +167,49 @@ Ths code translates the Loxone RGB values to Hue values. Then Deploy and it shou
 
 To make it easy you can import the loxonehue.json in nodered that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
 
+
+---
+
+## 🧠 Script Details – Loxone RGB/Temp → Hue Translation
+
+This Node-RED **Function Node** translates Loxone color commands into valid Philips Hue payloads.  
+It supports both **color temperature** (`temp()`) and **HSV color** (`hsv()`) formats, matching how Loxone sends RGB values through virtual outputs.
+
+### 🔹 Supported Input Formats
+
+| Type | Example Input | Description |
+|------|----------------|-------------|
+| Color Temperature | `temp(75, 4000)` | 75 % brightness, 4000 K white tone |
+| HSV Color | `hsv(210, 80, 60)` | Hue = 210°, Saturation = 80 %, Brightness = 60 % |
+
+---
+
+### ⚙️ How the Script Works
+
+1. Receives the Loxone command as a string via `msg.payload`.  
+2. Detects whether the input starts with `temp(...)` or `hsv(...)`.  
+3. Parses and converts the values:
+   - **temp()**
+     - Reads brightness + Kelvin.
+     - Converts Kelvin to **mireds** (Hue format).
+     - Clamps brightness (0–100 %) and color temp (153–500 mireds).
+     - Sends `{ on, brightness, colorTemp }`.
+     - If brightness = 0 → turns the light **off**.
+   - **hsv()**
+     - Parses hue (0–360°), saturation (0–100 %), value (0–100 %).
+     - Converts **HSV → RGB** internally.
+     - Sends `{ on, brightness, rgb, hex }`.
+     - If brightness = 0 → turns the light **off**.
+4. Invalid input → warning in the Node-RED debug console.
+
+---
+
+### 🧩 Example Output (HueMagic Compatible)
+
+```json
+{
+  "on": true,
+  "brightness": 80,
+  "rgb": [64, 128, 255],
+  "hex": "#4080ff"
+}
