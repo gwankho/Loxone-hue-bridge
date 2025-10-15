@@ -15,10 +15,10 @@ I tried everything to get it running without a service like Node-RED but did not
 So without further adue
 ---
 ## Hardware
-Set 1
-Loxone miniserver (100335)
-Raspberry Pi 3 4GB
-Hue bridge v2
+####Set 1
+####Loxone miniserver (100335)
+####Raspberry Pi 3 4GB
+####Hue bridge v2
 
 Set 2
 Loxone miniserver (100335)
