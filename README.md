@@ -66,7 +66,7 @@ flowchart TB
   end
 
   %% Platform onderaan
-  subgraph P ["Platform"]
+  subgraph P ["Platform Node-RED"]
     P1["Docker / Raspberry Pi / Synology"]
     P2["Local Network"]
     P1 --> P2
