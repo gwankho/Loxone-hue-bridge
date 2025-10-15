@@ -148,7 +148,7 @@ Then set the Control In up.
 
 2 Select the category of Lighting Controller (default is Lighting, duh)
 
-3 Select the Control, this is the Virtual Output Command thats defined on the Lighting Controller on the output!! Check Loxone to be sure Typecally it says (VQ) behind the name), do not select any other Loxone object as that just does not work.
+3 Select the Control, this is the Virtual Output Command that's defined on the Lighting Controller on the output!! Check Loxone to be sure Typically it says (VQ) behind the name), do not select any other Loxone object as that just does not work.
 <img width="539" height="362" alt="Screenshot 2025-10-15 at 17 05 46" src="https://github.com/user-attachments/assets/9d5c1768-b3e4-42e8-8512-a73c543dfa2e" />
 
 4 If the previous selection was correct you can select color here
@@ -157,15 +157,15 @@ Then set the Control In up.
 
 **The last step**
 
-Connect the loxone Lighting controller via a function block to the Hue lamp
+Connect the Loxone Lighting Controller via a function block to the Hue lamp
 <img width="889" height="386" alt="Screenshot 2025-10-15 at 17 10 30" src="https://github.com/user-attachments/assets/7f8fd4b7-1b0f-4039-af21-5bdb1f6fab37" />
 
 Then copy the code from the file functionrgb.js in the block
 <img width="1056" height="860" alt="Screenshot 2025-10-15 at 17 15 05" src="https://github.com/user-attachments/assets/7b7a88d8-0291-4601-ac3e-428625fe9d5c" />
 
-Ths code translates the Loxone RGB values to Hue values. Then Deploy and it should work.
+This code translates the Loxone RGB values to Hue values. Then Deploy and it should work.
 
-To make it easy you can import the noderedflow.json in nodered that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
+To make it easy you can import the noderedflow.json in Node-RED that sets this up automatically (obviously you need to preinstall your Hue bridge and Loxone server blocks).
 
 
 ---
