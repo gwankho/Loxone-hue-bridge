@@ -1,0 +1,54 @@
+[
+    {
+        "id": "e400dd8d20a4f60d",
+        "type": "hue-light",
+        "z": "3d1cb409d7598143",
+        "name": "Office1",
+        "bridge": "",
+        "lightid": "",
+        "colornamer": true,
+        "skipevents": false,
+        "initevents": false,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26df5d19c6e5a2c0",
+        "type": "loxone-control-in",
+        "z": "3d1cb409d7598143",
+        "name": "HueOffice6",
+        "miniserver": "",
+        "control": "1f9392a4-029c-23ba-ffff8231905ea56c/AI1",
+        "state": "1f9392a4-029c-23ea-ffff8231905ea56c",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "d746ecd1ba0f626f"
+            ]
+        ]
+    },
+    {
+        "id": "d746ecd1ba0f626f",
+        "type": "function",
+        "z": "3d1cb409d7598143",
+        "name": "function RGB",
+        "func": "// Function: temp + hsv support, off bij brightness = 0\nfunction clamp(n, min, max) {\n  return Math.max(min, Math.min(max, n));\n}\nfunction toNum(x) {\n  x = ('' + x).replace(',', '.');\n  const n = parseFloat(x);\n  return isFinite(n) ? n : NaN;\n}\n// HSV → RGB helper\nfunction hsv2rgb(h, s, v) {\n  s /= 100;\n  v /= 100;\n  const c = v * s;\n  const x = c * (1 - Math.abs((h / 60) % 2 - 1));\n  const m = v - c;\n  let r = 0, g = 0, b = 0;\n  if (0 <= h && h < 60) {\n    r = c; g = x; b = 0;\n  } else if (60 <= h && h < 120) {\n    r = x; g = c; b = 0;\n  } else if (120 <= h && h < 180) {\n    r = 0; g = c; b = x;\n  } else if (180 <= h && h < 240) {\n    r = 0; g = x; b = c;\n  } else if (240 <= h && h < 300) {\n    r = x; g = 0; b = c;\n  } else {\n    r = c; g = 0; b = x;\n  }\n  const R = Math.round((r + m) * 255);\n  const G = Math.round((g + m) * 255);\n  const B = Math.round((b + m) * 255);\n  return [R, G, B];\n}\n\n// Input als string\nlet inp = ('' + msg.payload).trim();\nlet out = {};\n\n// ——— temp(brightness, kelvin) ———\nlet mTMP = inp.match(/^temp\\(\\s*([0-9.,]+)\\s*[,;]\\s*([0-9.,]+)\\s*\\)$/i);\nif (mTMP) {\n  let bri = toNum(mTMP[1]);\n  let kelvin = toNum(mTMP[2]);\n  if (!isFinite(bri) || !isFinite(kelvin)) {\n    node.warn(\"temp parse failed: \" + inp);\n    return null;\n  }\n  // Bij brightness = 0 → uit\n  if (bri <= 0) {\n    msg.payload = { on: false };\n    return msg;\n  }\n  bri = clamp(bri, 0, 100);\n  let mired = Math.round(1000000 / kelvin);\n  mired = clamp(mired, 153, 500);\n  out.on = true;\n  out.brightness = bri;\n  out.colorTemp = mired;\n  msg.payload = out;\n  msg.topic = msg.topic || \"setLightState\";\n  return msg;\n}\n\n// ——— hsv(h, s, v) ———\nlet mHSV = inp.match(/^hsv\\(\\s*([0-9.,]+)\\s*[,;]\\s*([0-9.,]+)\\s*[,;]\\s*([0-9.,]+)\\s*\\)$/i);\nif (mHSV) {\n  let h = toNum(mHSV[1]);\n  let s = toNum(mHSV[2]);\n  let v = toNum(mHSV[3]);\n  if (!isFinite(h) || !isFinite(s) || !isFinite(v)) {\n    node.warn(\"hsv parse failed: \" + inp);\n    return null;\n  }\n  if (v <= 0) {\n    msg.payload = { on: false };\n    return msg;\n  }\n  // Als v in 0–1 schaal zit\n  if (v <= 1) v = v * 100;\n  v = clamp(v, 0, 100);\n  const rgb = hsv2rgb(h, s, v);\n  out.on = true;\n  out.brightness = v;\n  out.rgb = rgb;\n  // Optioneel: voeg hex toe\n  let hex = `#${((1 << 24) | (rgb[0] << 16) | (rgb[1] << 8) | rgb[2]).toString(16).slice(1)}`;\n  out.hex = hex;\n  msg.payload = out;\n  msg.topic = msg.topic || \"setLightState\";\n  return msg;\n}\n\n// ——— fallback: onbekend formaat ———\nnode.warn(\"Invalid input format: \" + inp);\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "e400dd8d20a4f60d"
+            ]
+        ]
+    }
+]
