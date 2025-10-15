@@ -56,20 +56,23 @@ flowchart TB
   L["Loxone Miniserver<br/>(Virtual Outputs & Lighting Controller)"] --> NR
   NR --> H["Philips Hue Bridge<br/>(Zigbee Network)"]
 
+  %% Node-RED instance (geel)
   subgraph NR ["Node-RED Instance"]
+    style NR fill:#fff8dc,stroke:#999,stroke-width:1px
     NR1["node-red-contrib-loxone"]
     NR2["Function Node<br/>(RGB · Temp · HSV Mapping)"]
     NR3["node-red-contrib-huemagic"]
     NR1 --> NR2 --> NR3
   end
 
+  %% Platform onderaan
   subgraph P ["Platform"]
     P1["Docker / Raspberry Pi / Synology"]
     P2["Local Network"]
     P1 --> P2
   end
 
-  P2 --> NR
+  NR --> P
 ```
 
 ## How it Works
