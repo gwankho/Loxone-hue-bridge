@@ -53,23 +53,23 @@ The sets react exactly the same
 
 ```mermaid
 flowchart TB
-    A["Loxone Miniserver\n(Virtual Outputs & Lighting Controller)"] --> B["Node-RED Bridge Logic"]
-    B --> C["Philips Hue Bridge\n(Zigbee Network)"]
+  L["Loxone Miniserver<br/>(Virtual Outputs & Lighting Controller)"] --> NR
+  NR --> H["Philips Hue Bridge<br/>(Zigbee Network)"]
 
-    subgraph B ["Node-RED Instance"]
-        B1["node-red-contrib-loxone"]
-        B2["Function Node\n(RGB / Temp / HSV Mapping)"]
-        B3["node-red-contrib-huemagic"]
-        B1 --> B2 --> B3
-    end
+  subgraph NR ["Node-RED Instance"]
+    NR1["node-red-contrib-loxone"]
+    NR2["Function Node<br/>(RGB · Temp · HSV Mapping)"]
+    NR3["node-red-contrib-huemagic"]
+    NR1 --> NR2 --> NR3
+  end
 
-    subgraph D ["Platform"]
-        D1["Docker / Raspberry Pi / Synology"]
-        D2["Local Network Connection"]
-        D1 --> D2
-    end
+  subgraph P ["Platform"]
+    P1["Docker / Raspberry Pi / Synology"]
+    P2["Local Network"]
+    P1 --> P2
+  end
 
-    D2 --> B
+  P2 --> NR
 ```
 
 ## How it Works
