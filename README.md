@@ -134,10 +134,8 @@ If you see the palette screen like this you are good!
 Hue is straightforward, drag and drop the Hue bridge on your environment
 <img width="2100" height="1600" alt="CleanShot 2025-10-15 at 16 45 09@2x" src="https://github.com/user-attachments/assets/35a65a60-d77c-415c-8af9-b018542181f0" />
 
-Type in the IP address (or better, click find)
-Then you need to enter your API key, click on the icon behind it and press the Hue button within a few seconds
-
-<img width="2100" height="1600" alt="CleanShot 2025-10-15 at 16 45 09@2x" src="https://github.com/user-attachments/assets/b25a4d6d-fad4-4221-86c5-468f9ab0fe53" />
+(1) Type in the IP address (or better, click find)
+(2) Then you need to enter your API key, click on the icon behind it and press the Hue button within a few seconds to get it automatically.
 
 Now add a Hue light 
 
