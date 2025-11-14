@@ -27,8 +27,8 @@ So apart from your Loxone and Hue devices you need Node-RED open source on somet
 
 So without further ado
 ---
-## Hardware
-**Set 1**
+## Hardware options
+**Option 1** (I used this for the initial test)
 
 Loxone miniserver (100335)
 
@@ -36,7 +36,7 @@ MacBook
 
 Hue bridge v2
 
-**Set 2**
+**Option 2** (this is in my holiday home)
 
 Loxone miniserver (100335)
 
@@ -45,7 +45,7 @@ Raspberry Pi 3 4GB
 Hue bridge v2
 
 
-**Set 3**
+**Option 3** (this is my main home)
 
 Loxone miniserver (100335)
 
