@@ -24,6 +24,14 @@ Everything works, HSV (white temp), RGB and even sequences (party mode).
 So apart from your Loxone and Hue devices you need Node-RED open source on something that runs already in your home (like my Synology) or if you really do not have anything buy a Raspberry Pi (I made it pretty by buying a EUR 15 DIN Housing and a EUR 8 LCD)
 <img width="325" height="375" alt="Screenshot 2025-10-15 at 16 06 48" src="https://github.com/user-attachments/assets/4ee18a90-6fdb-497b-a5c8-4e13dc2d94f2" />
 
+Total cost For the Raspberry Option DIN mounted (excluding Loxone and Hue) 
+Raspberry PI4 EUR 48
+Plastic container for embedded card type Raspberry PI B+ with DIN rail or wall mounting (Amazon) EUR 15
+Mean Well HDR-30-5 DIN Rail Power Supply (DIN-Rail) 5V/DC 3A 15W (Amazon) EUR 12
+RUNCCI-YUN Pack of 6 30 cm 22AWG Micro USB Male Pigtail Power Cable, 5V **3A** Micro USB Male to 2-Pin Bare Wire Open End, USB Pigtail Cable Extension Cable, for LED Lights, Fans (Amazon) EUR 6 
+[optional] Waveshare 2 inch LCD Module, 240 × 320 Resolution, IPS Display, with SPI Interface (Amazon) 16)
+Total EUR 97
+
 
 So without further ado
 ---
